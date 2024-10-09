@@ -3,3 +3,6 @@
 # .tfstate files
 *.tfstate
 *.tfstate.*
+
+.env
+.env.*
