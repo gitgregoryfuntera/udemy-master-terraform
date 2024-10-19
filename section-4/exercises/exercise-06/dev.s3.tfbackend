@@ -1,0 +1,5 @@
+# For illustration purposes not being used
+
+bucket = "udemy-terraform-remote-s3"
+key    = "exercise-06/dev/state.tfstate"
+region = "ap-southeast-1"
