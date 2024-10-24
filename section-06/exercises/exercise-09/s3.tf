@@ -52,7 +52,7 @@ resource "aws_s3_bucket_policy" "s3_static_website_policy" {
             "Effect": "Allow",
             "Principal": "*",
             "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::${aws_s3_bucket.s3_static_website.bucket}/*"
+            "Resource": "${aws_s3_bucket.s3_static_website.arn}/*"
         }
     ]
 }
