@@ -1,3 +1,4 @@
+
 module "vpc_cidr" {
   source = "./modules/networking"
   vpc_config = {
@@ -12,7 +13,8 @@ module "vpc_cidr" {
     }
     subnet_2 = {
       cidr_block = "10.0.1.0/24"
-      az         = "ap-southeast-1a"
+      az         = "ap-southeast-1b"
+      public     = true
     }
   }
 }
