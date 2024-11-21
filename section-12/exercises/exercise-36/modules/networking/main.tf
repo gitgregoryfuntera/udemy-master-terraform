@@ -2,6 +2,13 @@ locals {
   public_subnets = {
     for key, config in var.subnet_config : key => config if config.public
   }
+  private_subnets = {
+    for key, config in var.subnet_config : key => config if !config.public
+  }
+
+  subnet_azs = {
+    for key, config in var.subnet_config : key => config.az
+  }
 }
 
 data "aws_availability_zones" "available_az" {
@@ -60,6 +67,5 @@ resource "aws_route_table_association" "this" {
   subnet_id      = aws_subnet.this[each.key].id
   route_table_id = aws_route_table.this[0].id
 }
-
 
 
