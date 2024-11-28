@@ -31,7 +31,7 @@ resource "aws_iam_policy" "basic_execution_role" {
     Statement = [{
       Action   = ["logs:CreateLogGroup", "logs:CreateLogStream", "logs:PutLogEvents"]
       Effect   = "Allow"
-      Resource = "*"
+      Resource = ["*"]
     }]
     Version = "2012-10-17"
   })
